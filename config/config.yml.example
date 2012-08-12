@@ -1,0 +1,14 @@
+pivotal_tracker:
+  api_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  project_id: 11111
+  always_use_ssl: true
+github:
+  repo: some_repo
+  user: some_user_or_organization
+  login: a_login
+  password: **********
+zendesk:
+  subdomain: a_subdomain
+  username: user@domain.com
+  password: *******
+  view_id: 8575309

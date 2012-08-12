@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %title Plates
+    %script{:type => "text/javascript", :src => "javascripts/jquery-1.8.0.min.js"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "stylesheets/main.css"}
+
+    :javascript
+      $(document).ready(function(){
+        $(".collapsable").toggle(function(){
+          $(this).siblings(".content").slideDown();
+        }, function(){
+          $(this).siblings(".content").slideUp();
+        });
+        
+      });
+  %body
+    #content=yield
+

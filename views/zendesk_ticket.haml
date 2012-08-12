@@ -1,0 +1,35 @@
+-foods.each do |f|
+  .food
+    .food-title.collapsable=f.title
+    .content.food-info.hide
+      .food-label State
+      .food-value=f.state
+      .clearboth
+
+      .food-label Priority
+      .food-value=f.misc_info[:priority]
+      .clearboth
+
+      .food-label Requester
+      .food-value=f.misc_info[:requester]
+      .clearboth
+
+      -if f.created_at
+        .food-label Created
+        .food-value=f.created_at.strftime("%B %d, %Y")
+        .clearboth
+
+      -if f.updated_at
+        .food-label Updated
+        .food-value=f.updated_at.strftime("%B %d, %Y")
+        .clearboth
+
+      .food-label URL
+      .food-value
+        %a{:href => f.url} Click Here
+      .clearboth
+
+      %br
+      .food-label Description
+      .food-value=f.description
+      .clearboth

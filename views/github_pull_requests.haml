@@ -1,0 +1,24 @@
+-foods.each do |f|
+  .food
+    .food-title.collapsable=f.title
+    .content.food-info.hide
+      -if f.created_at
+        .food-label Created
+        .food-value=f.created_at.strftime("%B %d, %Y")
+        .clearboth
+
+      -if f.updated_at
+        .food-label Updated
+        .food-value=f.updated_at.strftime("%B %d, %Y")
+        .clearboth
+
+      .food-label URL
+      .food-value
+        %a{:href => f.url} Click Here
+      .clearboth
+
+      %br
+      .food-label Description
+      .food-value=f.description.gsub("\n", "<br />")
+      .clearboth
+

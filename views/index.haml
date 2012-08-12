@@ -1,0 +1,6 @@
+%h2 Select User
+
+%ul
+  -User.all.sort{|a,b| a.name <=> b.name}.each do |user|
+    %li
+      %a{:href=>"/#{user.id}"}=user.name

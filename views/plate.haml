@@ -1,0 +1,12 @@
+#navigation
+  %a{:href=>"/"} User List
+  |
+  %a{:href=>"/#{params[:id]}/reload"} Refresh
+
+%h2=@user.name
+
+-@user.plate.food.group_by(&:type).each do |type, foods|
+  .food-group
+    .food-group-category=foods.first.category
+    .foods=haml type.to_sym, :locals => {:foods => foods}
+.clearboth
