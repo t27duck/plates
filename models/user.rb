@@ -5,6 +5,7 @@ class User
   attr_reader :pivotal_tracker_name
   attr_reader :zendesk_name
   attr_reader :github_login
+  attr_reader :updated_at
 
   def self.all
     return @@stored_users unless @@stored_users.empty?
@@ -24,12 +25,15 @@ class User
     @pivotal_tracker_name = attrs.fetch(:pivotal_tracker_name, nil)
     @zendesk_name = attrs.fetch(:zendesk_name, nil)
     @github_login = attrs.fetch(:github_login, nil)
+    @updated_at = Time.now
   end
 
   def plate
+    @plate = nil if @plate && (Time.now - @updated_at).to_i > 60 * 20
     return @plate unless @plate.nil?
     @plate = Plate.new(self)
     @plate.fill
+    @updated_at = Time.now
     @plate
   end
 

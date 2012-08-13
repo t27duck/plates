@@ -10,3 +10,7 @@
     .food-group-category=foods.first.category
     .foods=haml type.to_sym, :locals => {:foods => foods}
 .clearboth
+
+#last-updated
+  Last Updated:
+  =@user.updated_at.strftime("%I:%M%p, %m/%d/%Y")

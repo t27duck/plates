@@ -13,6 +13,12 @@ body {
   -moz-border-radius: 15px;
 }
 
+#last-updated {
+  text-align: right;
+  font-style: italic;
+  font-size: 80%;
+}
+
 .hide {
   display: none;
 }
