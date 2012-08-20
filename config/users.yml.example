@@ -3,4 +3,5 @@ users:
     name: Billy Bob
     pivotal_tracker_name: Billy Bob
     zendesk_name: Billy Bob
+    zendesk_id: 1111111
     github_login: bbob3837

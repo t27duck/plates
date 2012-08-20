@@ -3,7 +3,7 @@ class Vendor::Zendesk < Vendor
   def serve
     food = []
     view_data.each do |row|
-      next if row["assignee"]["name"] != user.zendesk_name
+      next if row["assignee"].to_s != user.zendesk_id
       food << create_food(row.deep_symbolize_keys)
     end
     food

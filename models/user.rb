@@ -4,6 +4,7 @@ class User
   attr_reader :name
   attr_reader :pivotal_tracker_name
   attr_reader :zendesk_name
+  attr_reader :zendesk_id
   attr_reader :github_login
   attr_reader :updated_at
 
@@ -24,6 +25,7 @@ class User
     @name = attrs.fetch(:name)
     @pivotal_tracker_name = attrs.fetch(:pivotal_tracker_name, nil)
     @zendesk_name = attrs.fetch(:zendesk_name, nil)
+    @zendesk_id = attrs.fetch(:zendesk_id, '').to_s
     @github_login = attrs.fetch(:github_login, nil)
     @updated_at = Time.now
   end
